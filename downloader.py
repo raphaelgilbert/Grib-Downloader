@@ -42,7 +42,7 @@ D = today.strftime("%Y%m%d")
 hour = datetime.utcnow() - timedelta(hours = 3)
 print(hour)
 H = hour.strftime("%H")
-Hrun = 00
+Hrun = "00"
 if 0 < int(H) <= 6 :
     Hrun == "00"
 elif 6 < int(H) <= 12 :
@@ -61,7 +61,7 @@ for i in range(0, 385) :
         number = str("0" + str(i))
     else :
         number = str(i)
-    url = str(baseURL + Hrun + 'z.pgrb2.0p25.f' + number + productListURL + D + "%2F" + Hrun + "%2Fatmos")
+    url = str(baseURL + str(Hrun) + 'z.pgrb2.0p25.f' + number + productListURL + D + "%2F" + str(Hrun) + "%2Fatmos")
     print(url)
  
     response = requests.get(url)
